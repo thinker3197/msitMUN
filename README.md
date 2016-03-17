@@ -1,1 +1,1 @@
-# msitMUN
+# Website for MSIT MUN
