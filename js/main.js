@@ -21,3 +21,7 @@ jQuery(document).ready(function($) {
         }
     });
 });
+
+$(window).load(function() {
+    $('.loading').slideUp(1500);
+});
