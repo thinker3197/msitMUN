@@ -1,6 +1,19 @@
 jQuery(document).ready(function($) {
-    var isLateralNavAnimating = false;
 
+    $('#fullpage').fullpage({
+        anchors: ['MainNav', 'Team', 'About'],
+        scrollingSpeed: 800,
+        scrollOverflow: true,
+        scrollBar: false,
+        touchSensitivity: 15,
+        navigationTooltips: ['Navigation', 'Team', 'About'],
+        afterRender: function() {
+            $('video').get(0).play();
+        }
+
+    });
+
+    var isLateralNavAnimating = false;
     $('.nav-trigger').on('click', function(event) {
         event.preventDefault();
 
@@ -14,10 +27,16 @@ jQuery(document).ready(function($) {
             });
         }
     });
+
     $(function() {
         if (navigator.userAgent.indexOf('Safari') != -1 &&
             navigator.userAgent.indexOf('Chrome') == -1) {
             $("body").addClass("safari");
         }
+    });
+
+    $('.navigation-wrapper').find('li').click(function() {
+
+        console.log($(this).index());
     });
 });
