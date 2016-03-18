@@ -11,7 +11,7 @@ body {
     height: 100%;
     width: 100%;
     font-family: 'Poiret One', cursive;
-    overflow-x: hidden;
+    overflow: hidden;
     background-color: #000000;
 }
 
@@ -251,9 +251,9 @@ main {
     z-index: 1;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 100%;
     width: 100%;
-    overflow-y: visible;
+    overflow-y: hidden;
     visibility: hidden;
     -webkit-transition: visibility 0s 0.7s;
     -moz-transition: visibility 0s 0.7s;
