@@ -1,16 +1,10 @@
 jQuery(document).ready(function($) {
 
-    $('#fullpage').fullpage({
-        anchors: ['MainNav', 'Team', 'About'],
-        scrollingSpeed: 800,
-        scrollOverflow: true,
-        scrollBar: false,
-        touchSensitivity: 15,
-        navigationTooltips: ['Navigation', 'Team', 'About'],
-        afterRender: function() {
-            $('video').get(0).play();
-        }
-
+    $('a').click(function() {
+        $('html, body').animate({
+            scrollTop: $($.attr(this, 'href')).offset().top
+        }, 500);
+        return false;
     });
 
     var isLateralNavAnimating = false;
@@ -38,5 +32,5 @@ jQuery(document).ready(function($) {
     $('.navigation-wrapper').find('li').click(function() {
 
         console.log($(this).index());
-    });
+    })
 });

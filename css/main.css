@@ -11,7 +11,7 @@ body {
     height: 100%;
     width: 100%;
     font-family: 'Poiret One', cursive;
-    overflow: hidden;
+    overflow-x: hidden;
     background-color: #000000;
 }
 
@@ -22,6 +22,11 @@ html * {
 
 ul {
     list-style-type: none;
+}
+
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
 }
 
 main {
@@ -112,7 +117,6 @@ main {
     width: 54px;
     background-color: #090C17;
     border-radius: 50%;
-    overflow: hidden;
     text-indent: 100%;
     white-space: nowrap;
     -webkit-transition: -webkit-transform 0.5s;
@@ -235,6 +239,7 @@ main {
 .navigation-is-open .nav-trigger circle {
     stroke-width:2;
     stroke-dashoffset: 0;
+    overflow-y: scroll;
     -webkit-transition: stroke-dashoffset 0.4s 0.3s;
     -moz-transition: stroke-dashoffset 0.4s 0.3s;
     transition: stroke-dashoffset 0.4s 0.3s;
@@ -251,7 +256,7 @@ main {
     z-index: 1;
     top: 0;
     left: 0;
-    height: 100%;
+    height: 100vh;
     width: 100%;
     overflow-y: hidden;
     visibility: hidden;
@@ -263,6 +268,7 @@ main {
 .nav .navigation-wrapper {
     height: 100%;
     background-color: #090C17;
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     padding: 40px 5% 40px calc(5% + 80px);
     -webkit-transform: translateZ(0);
@@ -287,6 +293,7 @@ main {
 
 .navigation-is-open .nav {
     visibility: visible;
+    overflow-y: visible; /*Important*/
     -webkit-transition: visibility 0s 0s;
     -moz-transition: visibility 0s 0s;
     transition: visibility 0s 0s;
@@ -420,7 +427,7 @@ main {
 }
 
 .team-info {
-    position: absolute;
+    position: relative;
     z-index: 1000;
     top: 0;
     left: 0;
@@ -445,7 +452,7 @@ main {
 }
 
 .about-info {
-    position: absolute;
+    position: relative;
     z-index: 1;
     top: 0;
     left: 0;
