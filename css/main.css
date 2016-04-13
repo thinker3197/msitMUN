@@ -373,7 +373,7 @@ main {
 }
 
 .nav .contact-info li {
-    font-family: 'Poiret One';
+    font-family: 'Poiret One', cursive;
     margin-bottom: 1.5em;
     line-height: 1.2;
     color: rgba(255, 255, 255, 0.3);
@@ -472,8 +472,8 @@ main {
     height: 100%;
     display: table;
     width: 100%;
-    /*background-color: rgba(2, 37, 59, 1);
-*/    background-image: repeating-linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../Images/AboutBack.jpg');
+    background-color: rgba(2, 37, 59, 1);
+    background-image: repeating-linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../Images/AboutBack.jpg');*/
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
