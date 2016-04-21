@@ -8,6 +8,22 @@ setInterval(function() {
     .addClass("right").removeClass("middle").appendTo(".holder");
 }, 4500);
 
+var $input;
+
+function onInputFocus(event) {
+    var $target = $(event.target);
+    var $parent = $target.parent();
+    $parent.addClass('input--filled');
+};
+
+function onInputBlur(event) {
+    var $target = $(event.target);
+    var $parent = $target.parent();
+
+    if (event.target.value.trim() === '') {
+        $parent.removeClass('input--filled');
+    }
+};
 
 jQuery(document).ready(function($) {
 
@@ -17,6 +33,69 @@ jQuery(document).ready(function($) {
         }, 500);
         return false;
     });
+
+    google.maps.event.addDomListener(window, 'load', init);
+
+    $input = $('.input__field');
+
+    // in case there is any value already
+    $input.each(function() {
+        if ($input.val().trim() !== '') {
+            var $parent = $input.parent();
+            $parent.addClass('input--filled');
+        }
+    });
+
+    $input.on('focus', onInputFocus);
+    $input.on('blur', onInputBlur);
+
+    function init() {
+
+        var mapOptions = {
+            zoom: 17,
+
+            scrollwheel: false,
+
+            disableDefaultUI: true,
+
+            draggable: false,
+
+            center: new google.maps.LatLng(28.620713, 77.093087),
+
+            styles: [{
+                "stylers": [{
+                    "hue": "#16a085"
+                }, {
+                    "saturation": 0
+                }]
+            }, {
+                "featureType": "road",
+                "elementType": "geometry",
+                "stylers": [{
+                    "lightness": 100
+                }, {
+                    "visibility": "simplified"
+                }]
+            }, {
+                "featureType": "road",
+                "elementType": "labels",
+                "stylers": [{
+                    "visibility": "off"
+                }]
+            }]
+
+
+        };
+        var mapElement = document.getElementById('map');
+
+        var map = new google.maps.Map(mapElement, mapOptions);
+
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(28.620713, 77.092500),
+            map: map,
+            title: 'Snazzy!'
+        });
+    }
 
 
     $('.team-one-button').mouseenter(function() {

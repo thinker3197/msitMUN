@@ -11,7 +11,7 @@ body {
     height: 100%;
     width: 100%;
     font-family: 'Poiret One', cursive;
-    overflow-x: hidden;
+    overflow: hidden;
     background-color: #000000;
 }
 
@@ -80,6 +80,34 @@ main {
     font-weight: bolder;
 }
 
+#clockdiv {
+    color: #ffd800;
+    display: inline-block;
+    font-weight: 100;
+    text-align: center;
+    font-size: 30px;
+}
+
+#clockdiv > div {
+    padding: 10px;
+    border-radius: 3px;
+    background: transparent;
+    display: inline-block;
+}
+
+#clockdiv div > span {
+    padding: 15px;
+    border-radius: 3px;
+    background: transparent;
+    display: inline-block;
+}
+
+.timer {
+    padding-top: 5px;
+    font-size: 16px;
+    color: #ffd800;
+}
+
 .list-inline {
     padding-top: 50px;
 }
@@ -118,7 +146,7 @@ main {
     top: 20px;
     height: 54px;
     width: 54px;
-    background-color: #090C17;
+    background-color: #03202e;
     border-radius: 50%;
     text-indent: 100%;
     white-space: nowrap;
@@ -261,7 +289,7 @@ main {
     left: 0;
     height: 100vh;
     width: 100%;
-    overflow-y: hidden;
+    overflow: hidden;
     visibility: hidden;
     -webkit-transition: visibility 0s 0.7s;
     -moz-transition: visibility 0s 0.7s;
@@ -365,6 +393,71 @@ main {
     color: rgba(256, 256, 256, 1);
 }
 
+#slider {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: table;
+}
+
+#img {
+    width: 300%;
+    height: 100%;
+    margin: 0 auto;
+    position: absolute;
+    animation: slide 16s infinite ease-in-out alternate;
+}
+
+#img li {
+    float: left;
+    width: 33.33%;
+    height: 100%;
+    margin-left: 0px;
+    list-style: none;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+@keyframes slide {
+    0% {
+        margin-left: 0;
+    }
+    28% {
+        margin-left: 0;
+    }
+    33% {
+        margin-left: -100%;
+    }
+    61% {
+        margin-left: -100%;
+    }
+    66% {
+        margin-left: -200%;
+    }
+    100% {
+        margin-left: -200%;
+    }
+}
+
+.committee-info-body {
+    padding: 10%;
+}
+
+.committee-info-body p {
+    font-size: 20.84px;
+    color: #fff;
+}
+
+.committee-info-body h1 {
+    font-size: 4.9vh;
+    color: #FF522B;
+    font-weight: bold;
+    padding-bottom: 40px;
+}
+
 @media (max-width: 767px) {
     .nav .navbar {
         visibility: hidden;
@@ -374,94 +467,35 @@ main {
     .nav .primary-nav {
         height: 4px;
     }
-    .munimage-info {
-        background-image: repeating-linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)), url('http://tomun.eu/wp-content/uploads/2014/09/UN_General_Assembly_hall.jpg');
+    .intro-body h2 {
+        display: none;
+        font-size: 0;
     }
-}
-
-
-/*.nav .primary-nav {
-    margin-top: 30px;
-}
-
-.nav .primary-nav li {
-    padding-right: 2%;
-    display: inline;
-}
-
-.nav .primary-nav a {
-    font-family: 'Poiret'Poiret One', cursive; 2.4rem;
-    color: rgba(255, 255, 255, 0.3);
-}
-
-.no-touch .nav .primary-nav a:hover,
-.no-touch .nav .primary-nav a:active,
-.no-touch .nav .primary-nav a:visited {
-    text-decoration: none;
-}
-
-.no-touch .nav .primary-nav a:hover {
-    color: #ffffff;
-    cursor: pointer;
-    -webkit-transition: all .2s ease-in-out;
-    -moz-transition: all .2s ease-in-out;
-    -ms-transition: all .2s ease-in-out;
-    -o-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
-}
-
-@media only screen and (min-width: 1170px) {
-/*    .nav .navigation-wrapper {
-        padding: 62px 20%;
+    .intro-body h1 {
+        font-size: 44px;
     }
-*/
-
-
-/*.nav .navigation-wrapper::after {
-        clear: both;
-        content: "";
-        display: table;
+    #clockdiv div > span {
+        padding: 1px;
     }
-    .nav .primary-nav {
-        width: 100%;
+    #clockdiv > span {
+        font-size: 10px;
     }
-    .nav h2 {
-        font-size: 1.5rem;
-        margin-bottom: 5.6em;
+    .list-inline {
+        padding-top: 30px;
     }
-    .nav .primary-nav a {
-        font-size: 3rem;
+    .committee-info-body p {
+        font-size: 12.84px;
     }
-*/
-
-
-/*.nav .contact-info {
-        margin-top: 100px;
-        visibility: visible;
+    .committee-info-body h1 {
+        padding-bottom: 10px;
+        padding-top: 25px;
     }
-    .nav .contact-info li {
-        margin-bottom: 2.4em;
+    #slider {
+        height: 112%;
     }
-    .nav .contact-info li,
-    .nav .contact-info a,
-    .nav .contact-info span {
-        font-size: 2rem;
+    .nav-trigger {
+        background: transparent;
     }
-}
-*/
-
-.munimage-info {
-    position: relative;
-    z-index: 5;
-    top: 0;
-    left: 0;
-    height: 83%;
-    display: table;
-    width: 100%;
-    background-image: repeating-linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)), url('http://tomun.eu/wp-content/uploads/2014/09/UN_General_Assembly_hall.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 50%;
 }
 
 .team-info {
@@ -472,7 +506,7 @@ main {
     height: 100%;
     display: table;
     width: 100%;
-    background-image: repeating-linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1));
+    background-color: #03202E;
 }
 
 .team-info-body {
@@ -480,7 +514,7 @@ main {
     vertical-align: middle;
     font-size: 3vh;
     color: #ffffff;
-    padding: 2%;
+    padding: 1%;
 }
 
 .team-list {
@@ -532,7 +566,7 @@ main {
 }
 
 h3 {
-    margin: 0 0 1em 0;
+    margin: 0 0 0 0;
     font-weight: bold;
     line-height: 1.4em;
     text-rendering: optimizelegibility;
@@ -553,7 +587,7 @@ h3 span {
     border: 5px solid #888;
     position: relative;
     -webkit-backface-visibility: hidden;
-    background: url('https://help.github.com/assets/img/help/profile/identicon.png');
+    background: url('https://avatars2.githubusercontent.com/u/14110960?v=3&s=96');
     background-size: contain;
 }
 
@@ -630,11 +664,14 @@ h3 span {
 }
 
 
-/*.team-one-button.active .four {
+/*--------------------- In case we more social icons -------------------------
+
+.team-one-button.active .four {
     top: 56px;
     left: 218.4px;
 }
-*/
+
+-------------------------------------------------------------------------------*/
 
 .sub-one:before {
     display: block;
@@ -653,15 +690,12 @@ h3 span {
 
 .about-info {
     position: relative;
-    z-index: 7;
     top: 0;
     left: 0;
     height: 10%;
     display: table;
     width: 100%;
-    /*background-color: rgba(2, 37, 59, 1);
-*/
-    background-image: repeating-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/msit.jpg');
+    background-image: repeating-linear-gradient(rgba(3, 32, 46, 0.6), rgba(3, 0, 0, 0.4)), url('../img/msit.jpg');
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -697,18 +731,17 @@ h3 span {
     height: 100%;
     display: table;
     width: 100%;
-    background-color: #010f18;
+    background-color: #03202E;
 }
 
 .vision-info-body {
-    padding: 6%;
-    font-size: 3vh;
+    padding: 10%;
+    font-size: 2.3vh;
     color: #ffffff;
 }
 
 .vision-info-body p {
     font-family: 'Poiret One', cursive;
-    font-style: italic;
 }
 
 .vision-info-body h1 {
@@ -719,6 +752,21 @@ h3 span {
     padding-bottom: 40px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+.quote {
+    position: absolute;
+    left: 4vw;
+    top: 18vh;
+    z-index: -11;
+}
+
+@media (max-width: 767px) {
+    .quote {
+        left: 4vw;
+        top: 10vh;
+        opacity: 0.8;
+    }
 }
 
 .no-js main {
@@ -750,48 +798,14 @@ h3 span {
     height: 99.7%;
     left: 0;
     top: 0;
-    /*background-color: #216b62;*/
-    background-image: url('../img/background.jpg');
+    background-image: url('http://jessicadurrant.com/wordpress/wp-content/uploads/2011/11/World-Map-No.-61.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
 }
 
 
-/* CSS FOR CLOCK TIMER*/
-
-#committee h1 {
-    text-align: center;
-}
-
-#clockdiv {
-    font-family: 'Poiret One', cursive;
-    color: #ffd800;
-    display: inline-block;
-    font-weight: 100;
-    text-align: center;
-    font-size: 30px;
-}
-
-#clockdiv > div {
-    padding: 10px;
-    border-radius: 3px;
-    background: transparent;
-    display: inline-block;
-}
-
-#clockdiv div > span {
-    padding: 15px;
-    border-radius: 3px;
-    background: transparent;
-    display: inline-block;
-}
-
-.timer {
-    padding-top: 5px;
-    font-size: 16px;
-    color: #ffd800;
-}
+/*--------------------- In case we nedded side nav dots -------------------------
 
 .side-nav {
     position: fixed;
@@ -824,271 +838,165 @@ h3 span {
     background-color: white;
 }
 
-.foot {
-    position: relative;
-    z-index: 7;
-    top: 0;
-    left: 0;
-    height: 30%;
-    display: table;
+-------------------------------------------------------------------------------------*/
+
+#map {
     width: 100%;
-    background-color: black;
+    height: 60%;
 }
 
-.footer-info-body {
-    text-align: center;
-    font-size: 3vh;
-    font-size: 5.9vh;
-    color: #FF522B;
+.footer-distributed {
+    background-color: #111;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    padding: 55px 50px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.footer-distributed .footer-left {
+    width: 40%;
+}
+
+.footer-distributed h3 {
+    color: #ffffff;
+    margin: 0;
+}
+
+.footer-distributed h3 span {
+    color: #0f9999;
+}
+
+.footer-distributed .footer-links {
+    color: #ffffff;
+    margin: 20px 0 12px;
+    padding: 0;
+}
+
+.footer-distributed .footer-links a {
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer-distributed .footer-company-name {
+    color: #8f9296;
+    font-size: 14px;
     font-weight: bold;
-    padding-top: 2%;
-    /*padding-bottom: 40px;*/
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
 }
 
-.location {
-    position: relative;
-    z-index: 7;
-    top: 0;
-    left: 0;
-    height: 50%;
-    display: table;
-    width: 100%;
-    background-image: repeating-linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('http://4.bp.blogspot.com/-g9PxffWUrHo/UBzc5fq0iYI/AAAAAAAAANI/Alnanq_J30c/s640/msit-delhi.jpg');
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 50%;
+.footer-distributed .footer-center {
+    width: 35%;
 }
 
-.loc {
-    margin: 0 auto;
-    padding-top: 2%;
-}
-
-.wrapper-head > p {
-    font-size: 5vh;
+.footer-distributed .footer-center i {
+    background-color: #33383b;
+    color: #ffffff;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
     text-align: center;
-    margin-bottom: 0px;
-    font-weight: 1200;
-    text-transform: uppercase;
-    line-height: 1;
-    letter-spacing: 5px;
-    font-family: 'Poiret One', cursive;
-    color: white;
-    padding-top: 4%;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
 }
 
-.wrapper-head-details {
-    padding-top: 4%;
+.footer-distributed .footer-center i.fa-envelope {
+    font-size: 17px;
+    line-height: 38px;
 }
 
-.wrapper-head-details {
-    font-size: 2vh;
+.footer-distributed .footer-center p {
+    display: inline-block;
+    color: #ffffff;
+    vertical-align: middle;
+    margin: 0;
+}
+
+.footer-distributed .footer-center p span {
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.footer-distributed .footer-center p a {
+    color: #01CBCC;
+    text-decoration: none;
+}
+
+.footer-distributed .footer-right {
+    width: 20%;
+}
+
+.footer-distributed .footer-company-about {
+    line-height: 20px;
+    color: #92999f;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.footer-distributed .footer-company-about span {
+    display: block;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons {
+    margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-color: #33383b;
+    border-radius: 2px;
+    font-size: 20px;
+    color: #ffffff;
     text-align: center;
-    margin-bottom: 0px;
-    font-weight: 300;
-    line-height: 1;
-    letter-spacing: 4px;
-    font-family: 'Poiret One', cursive;
-    color: white;
-    padding: 0 !important;
+    line-height: 35px;
+    margin-right: 3px;
+    margin-bottom: 5px;
 }
 
-.wrapper-head-details >p {
-    font-size: 3vh;
-    text-align: center;
-    margin-bottom: 0px;
-    font-weight: 800;
-    text-transform: uppercase;
-    line-height: 1;
-    letter-spacing: 4px;
-    font-family: 'Poiret One', cursive;
-    color: white;
-    padding: 2%;
+footer .fa:hover {
+    color:  #0f9999;
 }
 
-.wrapper-head-time {
-    font-size: 1.5vh;
-    text-align: center;
-    margin-bottom: 0px;
-    font-weight: 400;
-    line-height: 1;
-    letter-spacing: 4px;
-    font-family: 'Poiret One', cursive;
-    color: white;
-    padding-top: 2%;
-}
-
-.arrows {
-    width: 60px;
-    height: 72px;
-    position: absolute;
-    left: 50%;
-    margin-left: -30px;
-    bottom: 20px;
-}
-
-.arrows path {
-    /*stroke: #2994D1;*/
-    stroke: #ecf0f1;
-    fill: transparent;
-    stroke-width: 3px;
-    animation: arrow 2s infinite;
-    -webkit-animation: arrow 2s infinite;
-}
-
-@keyframes arrow {
-    0% {
-        opacity: 0
+@media (max-width: 880px) {
+    .footer-distributed {
+        font: bold 14px;
     }
-    40% {
-        opacity: 1
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right {
+        display: block;
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
     }
-    80% {
-        opacity: 0
+    .footer-distributed .footer-center i {
+        margin-left: 5vw;
     }
-    100% {
-        opacity: 0
+    .footer-distributed div:nth-child(2) {
+        text-align: left;
     }
-}
-
-@-webkit-keyframes arrow
-/*Safari and Chrome*/
-
-{
-    0% {
-        opacity: 0
+    .footer-distributed .footer-right .footer-icons {
+        text-align: center;
     }
-    40% {
-        opacity: 1
-    }
-    80% {
-        opacity: 0
-    }
-    100% {
-        opacity: 0
-    }
-}
-
-.arrows path.a1 {
-    animation-delay: -1s;
-    -webkit-animation-delay: -1s;
-    /* Safari 和 Chrome */
-}
-
-.arrows path.a2 {
-    animation-delay: -0.5s;
-    -webkit-animation-delay: -0.5s;
-    /* Safari 和 Chrome */
-}
-
-.arrows path.a3 {
-    animation-delay: 0s;
-    -webkit-animation-delay: 0s;
-    /* Safari 和 Chrome */
-}
-
-.head>p {
-    text-align: center;
-    margin-top: 3%;
-    margin-bottom: 4%;
-    font-size: 30px;
-    font-family: 'Poiret One', cursive;
-    color: white;
-    font-weight: 1200;
-    line-height: 1;
-    letter-spacing: 4px;
-}
-
-#slider {
-    height: 83%;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-#img {
-    width: 300%;
-    height: 100%;
-    margin: 0 auto;
-    position: absolute;
-    animation: slide 16s infinite ease-in-out alternate;
-}
-
-#img li {
-    float: left;
-    width: 33.33%;
-    height: 100%;
-    margin-left: 0px;
-    list-style: none;
-    /* Not Part of Slider */
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-@keyframes slide {
-    0% {
-        margin-left: 0;
-    }
-    28% {
-        margin-left: 0;
-    }
-    33% {
-        margin-left: -100%;
-    }
-    61% {
-        margin-left: -100%;
-    }
-    66% {
-        margin-left: -200%;
-    }
-    100% {
-        margin-left: -200%;
-    }
-}
-
-.contactus-info {
-    position: relative;
-    z-index: 9;
-    top: 0;
-    left: 0;
-    height: 100%;
-    /* display: table;*/
-    width: 100%;
-    background-color: #010f18;
-}
-
-.contact {
-    padding-top: 4%;
-}
-
-.fd {
-    padding-left: 30px !important;
-
-}
-
-.feed {
-    text-align: center;
-    margin-top: 3%;
-    margin-bottom: 4%;
-    font-size: 2.5vh;
-    font-family: 'Poiret One', cursive;
-    color: white;
-    font-weight: 1200;
-    line-height: 1;
-
-}
-.foot{
-
-    text-align: center;
-     margin-top: 1%;
-    font-size: 2vh;
-    font-family: 'Poiret One', cursive;
-    color: white;
-    font-weight: 800;
-    line-height: 1; 
 }
