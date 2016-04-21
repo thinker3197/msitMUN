@@ -75,18 +75,18 @@ main {
     width: 100%;
     display: table-cell;
     vertical-align: middle;
-    color: #ffffff;
+    color: #dce9e7;
     font-weight: bold;
 }
 
 .intro-body > h1 {
-    color: #ffffff;
+    color: #dce9e7;
     font-size: 60px;
     font-weight: bolder;
 }
 
 #clockdiv {
-    color: #ffffff;
+    color: #dce9e7;
     display: inline-block;
     font-weight: 600;
     text-align: center;
